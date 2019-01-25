@@ -1,0 +1,29 @@
+package adventure;
+
+public class Direction {
+	public double distence(double currentDistence, int targetDirection, int oppositeDirection, int currentDirection) {
+		double newDistence = currentDistence;
+		double travelledTowardsAway = 0.5;
+		double travelledOther = 0.75;
+		if (currentDirection == targetDirection) {
+			return newDistence = currentDistence - travelledTowardsAway;
+		}else if (currentDirection == oppositeDirection) {
+			return newDistence = currentDistence + travelledTowardsAway;
+		}else {
+			return newDistence = currentDistence + travelledOther;
+		}
+	}
+	public Integer oppositeDirection(int targetDirection) {
+		int oppositeDirection=0;
+		if (targetDirection==1) {
+			return oppositeDirection = 3;
+		}else if (targetDirection==2) {
+			return oppositeDirection = 4;
+		}else if (targetDirection==3) {
+			return oppositeDirection = 1;
+		}else if (targetDirection==4) {
+			return oppositeDirection = 2;
+		}
+		return oppositeDirection;
+	}
+}

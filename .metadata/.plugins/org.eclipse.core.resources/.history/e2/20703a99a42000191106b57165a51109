@@ -1,0 +1,15 @@
+package adventure;
+
+import java.util.Random;
+
+public class Findings {
+	public String newItem() {
+		String[] objects = {"nothing","a rusty sword","an old book with arcane scrawlings","a dead fish","a skeleton trapped under rocks",""};
+		int randomObjects= new Random().nextInt(items.length);
+		for (int i = 0; i < randomObjects; i++) {
+
+		//array of items to iterate through
+		//add items found to new array to iterate thorugh at the end of the game
+		return newItem;
+		}
+}

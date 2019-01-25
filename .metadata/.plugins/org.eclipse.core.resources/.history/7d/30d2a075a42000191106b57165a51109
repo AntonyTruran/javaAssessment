@@ -1,0 +1,17 @@
+package adventure;
+
+import java.util.Random;
+
+public class EndPoint {
+	public Integer targetDirection() {
+		int totalDirection = new Random().nextInt(4)+1; 
+				//(int) (Math.random() * 4 + 1);
+		System.out.println(totalDirection);
+		return totalDirection;
+	}
+
+	public int targetDistence() {
+		int totalDistence = new Random().nextInt(20)+1;
+		return totalDistence;
+	}
+}

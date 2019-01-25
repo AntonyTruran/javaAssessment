@@ -1,0 +1,33 @@
+package adventure;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Findings {
+	
+	private String[] inventory = {};
+	
+	public String newItem() {
+		String[] items = {"nothing","a rusty sword","an old book with arcane scrawlings","a dead fish","a skeleton trapped under rocks","a broken spear","a rusted holy symbol","a wizards staff",
+				"a rusted suit of chain armour","a dragons claw","a moldy old book"};
+		int randomObject= new Random().nextInt(items.length);
+		String newItem = items[randomObject];
+		System.out.println("Asside from the dark waters and withered plants you find " + newItem+"\r\n");
+		System.out.println("Would you like to pick up this object? (yes/no");
+		
+		Scanner itemCollection = new Scanner(System.in);
+		String addItem = itemCollection.nextLine();
+		if (addItem.toLowerCase().equals("yes")) {
+			inventory[inventory.length+1]=newItem;
+		}
+		//add items found to new array to iterate thorugh at the end of the game
+		return newItem;
+		}
+	public String finalInventory() {
+		System.out.println("You collected:\r\n");
+		for (String item : inventory) {
+			System.out.println(item);
+			}
+		return null;
+	}
+}

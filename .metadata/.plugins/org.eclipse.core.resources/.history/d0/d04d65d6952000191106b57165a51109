@@ -1,0 +1,50 @@
+package adventure;
+
+import java.util.Scanner;
+
+public class Route {
+	public String journey(int targetDirection, double currentDistence) {
+
+		Direction direction = new Direction();
+		int oppositeDirection = direction.oppositeDirection(targetDirection);
+		int currentDirection = 0;
+		boolean found = false;
+		while (found != true) {
+			System.out.println("which way will you go? (type north south east or west to travel).\r\n"
+					+ "or type investigate to search the area.");
+			Scanner chosenDirection = new Scanner(System.in);
+			String moving = chosenDirection.nextLine();
+			if (moving.toLowerCase().equals("north")) {
+				currentDirection = 1;
+				currentDistence = direction.distence(currentDistence, targetDirection, oppositeDirection,
+						currentDirection);
+			} else if (moving.toLowerCase().equals("east")) {
+				currentDirection = 2;
+				currentDistence = direction.distence(currentDistence, targetDirection, oppositeDirection,
+						currentDirection);
+			} else if (moving.toLowerCase().equals("south")) {
+				currentDirection = 3;
+				currentDistence = direction.distence(currentDistence, targetDirection, oppositeDirection,
+						currentDirection);
+			} else if (moving.toLowerCase().equals("west")) {
+				currentDirection = 4;
+				currentDistence = direction.distence(currentDistence, targetDirection, oppositeDirection,
+						currentDirection);
+			} else if (moving.toLowerCase().equals("investigate")) {
+				found = search(found,currentDistence);
+			} else {
+				System.out.println("please enter the full word");
+			}
+		}
+		return "you found the treasure";
+	}
+	private boolean search(boolean found, double currentDistence) {
+		if (currentDistence == 0) {
+			found = true;
+			System.out.println("Atop a small hill you see a dark but regal figure, they speak to you offering you a release from this place, at a price.");
+		}else {
+			System.out.println("Asside from the dark waters and withered plants you find nohting");
+		}
+		return found;
+	}
+}

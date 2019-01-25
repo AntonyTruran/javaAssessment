@@ -1,0 +1,9 @@
+package adventure;
+
+public class Route {
+	public double north(int targetDirection, double currentDistence, int currentDirection, int oppositeDirection) {
+		Direction direction = new Direction();
+		direction.distence(currentDistence, targetDirection, oppositeDirection, currentDirection);
+		return currentDistence;
+		}
+}

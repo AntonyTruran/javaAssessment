@@ -1,0 +1,22 @@
+package adventure;
+
+import java.util.Scanner;
+
+public class App {
+
+	public static void main(String[] args) {
+		System.out.println("Grey foggy clouds float oppressively close to you, \r\n" + 
+				"reflected in the murky grey water which reaches up your shins.\r\n" + 
+				"Some black plants barely poke out of the shallow water.\r\n" + 
+				"The watch on your hand displays a number, but it doesn't seem to be time.\r\n"+
+				"which way will you go?");
+		EndPoint distence = new EndPoint(0, 0);
+		distence.targetDirection();
+		distence.targetDistence();
+		System.out.println(distence.getDirection()+" "+distence.getDistence());
+		Scanner chosenDirection = new Scanner(System.in);
+		String moving = chosenDirection.nextLine();
+		
+	}
+
+}

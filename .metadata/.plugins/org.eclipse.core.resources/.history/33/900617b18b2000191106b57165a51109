@@ -1,0 +1,38 @@
+package adventure;
+
+public class EndPoint {
+	public EndPoint(Integer direction, Integer distence) {
+		super();
+		this.direction = direction;
+		this.distence = distence;
+	}
+
+	private int direction;
+	private int distence;
+
+	public int getDirection() {
+		return direction;
+	}
+
+	public void setDirection(Integer direction) {
+		this.direction = direction;
+	}
+
+	public int getDistence() {
+		return distence;
+	}
+
+	public void setDistence(Integer distence) {
+		this.distence = distence;
+	}
+
+	public Integer targetDirection() {
+		int direction = getDirection() + (int) (Math.random() * 4 + 1);
+		return getDirection();
+	}
+
+	public int targetDistence() {
+		int totalDistence = (int) (Math.random() * 10 + 1);
+		return totalDistence;
+	}
+}

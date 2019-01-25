@@ -1,0 +1,10 @@
+package adventure;
+
+public class Findings {
+	public String newItem() {
+		Array items = new array {}
+		//array of items to iterate through
+		//add items found to new array to iterate thorugh at the end of the game
+		return newItem;
+		}
+}

@@ -1,0 +1,20 @@
+package adventure;
+
+import java.util.Scanner;
+
+public class App {
+
+	public static void main(String[] args) {
+		System.out.println("As you fall from a fatal wound, calling to the dark for salvation your vision clouds"
+				+ "Grey foggy clouds float oppressively close to you, \r\n"
+				+ "reflected in the murky grey water which reaches up your shins.\r\n"
+				+ "Some black plants barely poke out of the shallow water.\r\n"
+				+ "The watch on your hand displays a number, but it doesn't seem to be the time.");
+		EndPoint distence = new EndPoint();
+		int targetDirection = distence.targetDirection();
+		double currentDistence = distence.targetDistence();
+		Route route = new Route();
+		System.out.println(route.journey(targetDirection, currentDistence));
+	}
+
+}

@@ -1,0 +1,45 @@
+package adventure;
+
+import java.util.Scanner;
+
+public class App {
+
+	public static void main(String[] args) {
+		System.out.println("Grey foggy clouds float oppressively close to you, \r\n"
+				+ "reflected in the murky grey water which reaches up your shins.\r\n"
+				+ "Some black plants barely poke out of the shallow water.\r\n"
+				+ "The watch on your hand displays a number, but it doesn't seem to be time.");
+		EndPoint distence = new EndPoint();
+		int targetDirection = distence.targetDirection();
+		double currentDistence = distence.targetDistence();
+
+		Direction direction =new Direction();
+		direction.correctDirection(targetDirection);
+		direction.oppositeDirection(targetDirection);
+		
+		Route target = new Route();
+		Searching search = new Searching();
+		boolean found = false;
+		while (found != true) {
+			System.out.println("which way will you go? (type north south east or west to travel).\\r\\n"
+					+ "or type investigate to search the area.");
+			Scanner chosenDirection = new Scanner(System.in);
+			String moving = chosenDirection.nextLine();
+			if (moving.toLowerCase().equals("north")) {
+				currentDistence = target.north(targetDirection, currentDistence);
+			} else if (moving.toLowerCase().equals("east")) {
+				target.east();
+			} else if (moving.toLowerCase().equals("south")) {
+				target.south();
+			} else if (moving.toLowerCase().equals("west")) {
+				target.west();
+			} else if (moving.toLowerCase().equals("investigate")) {
+				found = search.isFound(found);
+			} else {
+				System.out.println("please enter the full word");
+			}
+		}
+
+	}
+
+}

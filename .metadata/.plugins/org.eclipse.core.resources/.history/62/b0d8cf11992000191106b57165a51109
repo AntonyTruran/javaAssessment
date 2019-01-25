@@ -1,0 +1,8 @@
+package adventure;
+
+public class Findings {
+	public String item() {
+		
+		return newItem;
+		}
+}
